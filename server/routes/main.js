@@ -3,7 +3,16 @@ const router = express.Router();
 
 //Routes
 router.get('', (req, res)=> {
-    res.render('index')
+    const locals = {
+        title: "psBlogsMEEN",
+        description: "Simple blog created using the MEEN stack"
+    }
+
+    res.render('index', {locals});
+})
+
+router.get('/about', (req, res)=>{
+    res.render('about');
 })
 
 module.exports = router;
